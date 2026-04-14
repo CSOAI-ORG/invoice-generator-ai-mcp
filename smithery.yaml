@@ -1,10 +1,5 @@
 name: invoice-generator-ai-mcp
-description: "MEOK AI Labs — Invoice Generator tools for AI agents and LLMs"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/invoice-generator-ai-mcp
-license: MIT
-categories: [Finance, Business]
-tags: [invoice, billing, invoice-generation, payment, accounts-receivable]
-runtime: python
-entrypoint: server.py
+description: "Invoice Generator Ai Mcp \u2014 Generate professional invoices with\
+  \ line items and totals."
+version: 1.0.0
+tools: []
