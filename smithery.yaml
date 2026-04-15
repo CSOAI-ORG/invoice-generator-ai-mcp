@@ -1,5 +1,6 @@
 name: invoice-generator-ai-mcp
-description: Generate, validate, and manage professional invoices with tax calculations.
+description: 'Invoice Generator Ai tools for AI agents. Capabilities: generate invoice,
+  calculate totals, validate invoice. Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: generate_invoice

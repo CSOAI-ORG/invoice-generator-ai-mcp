@@ -1,7 +1,7 @@
 {
   "name": "invoice-generator-ai-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs — invoice generator MCP Server",
+  "description": "Invoice Generator Ai tools for AI agents. Capabilities: generate invoice, calculate totals, validate invoice. Built by MEOK AI Labs.",
   "main": "server.py",
   "mcp": {
     "name": "invoice generator",
@@ -9,10 +9,22 @@
     "homepage": "https://meok.ai",
     "repository": "https://github.com/CSOAI-ORG/invoice-generator-ai-mcp",
     "runtime": "python",
-    "tags": ["mcp", "mcp-server", "meok-ai-labs", "ai-tools"]
+    "tags": [
+      "mcp",
+      "mcp-server",
+      "meok-ai-labs",
+      "ai-tools"
+    ]
   },
-  "keywords": ["mcp", "mcp-server", "meok-ai-labs"],
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "meok-ai-labs"
+  ],
   "author": "MEOK AI Labs <nicholas@meok.ai>",
   "license": "MIT",
-  "repository": {"type": "git", "url": "https://github.com/CSOAI-ORG/invoice-generator-ai-mcp"}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/invoice-generator-ai-mcp"
+  }
 }
