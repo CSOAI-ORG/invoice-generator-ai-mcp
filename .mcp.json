@@ -1,11 +1,81 @@
 {
   "name": "invoice-generator-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Generate, validate, and manage professional invoices with tax calculations.",
   "version": "1.0.0",
   "tools": [
     {
-      "name": "create_invoice",
-      "description": "Create an invoice",
+      "name": "generate_invoice",
+      "description": "Generate a professional invoice. Each item needs 'description', 'qty', and 'price' keys.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "tax_region": {
+            "type": "string"
+          },
+          "template": {
+            "type": "string"
+          },
+          "due_days": {
+            "type": "integer"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client",
+          "items"
+        ]
+      }
+    },
+    {
+      "name": "calculate_totals",
+      "description": "Calculate subtotal, tax, discount, and grand total for a list of line items.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array"
+          },
+          "tax_region": {
+            "type": "string"
+          },
+          "discount_percent": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    {
+      "name": "validate_invoice",
+      "description": "Validate an invoice dict for required fields, correct math, and common errors.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "invoice": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "invoice"
+        ]
+      }
+    },
+    {
+      "name": "list_templates",
+      "description": "List all available invoice templates with their details.",
       "parameters": {
         "type": "object",
         "properties": {},

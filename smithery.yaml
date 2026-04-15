@@ -1,7 +1,52 @@
 name: invoice-generator-ai-mcp
-description: MEOK AI Labs MCP Server
+description: Generate, validate, and manage professional invoices with tax calculations.
 version: 1.0.0
 tools:
-- name: create_invoice
-  description: Create an invoice
+- name: generate_invoice
+  description: Generate a professional invoice. Each item needs 'description', 'qty',
+    and 'price' keys.
+  parameters:
+  - name: client
+    type: string
+    required: true
+  - name: items
+    type: array
+    required: true
+  - name: currency
+    type: string
+    required: false
+  - name: tax_region
+    type: string
+    required: false
+  - name: template
+    type: string
+    required: false
+  - name: due_days
+    type: integer
+    required: false
+  - name: notes
+    type: string
+    required: false
+- name: calculate_totals
+  description: Calculate subtotal, tax, discount, and grand total for a list of line
+    items.
+  parameters:
+  - name: items
+    type: array
+    required: true
+  - name: tax_region
+    type: string
+    required: false
+  - name: discount_percent
+    type: number
+    required: false
+- name: validate_invoice
+  description: Validate an invoice dict for required fields, correct math, and common
+    errors.
+  parameters:
+  - name: invoice
+    type: object
+    required: true
+- name: list_templates
+  description: List all available invoice templates with their details.
   parameters: []
