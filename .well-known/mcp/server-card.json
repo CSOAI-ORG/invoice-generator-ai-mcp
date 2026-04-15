@@ -1,0 +1,54 @@
+{
+  "name": "invoice-generator-ai",
+  "description": "Generate, validate, and manage professional invoices with tax calculations.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/invoice-generator-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "generate_invoice",
+      "description": "Generate a professional invoice. Each item needs 'description', 'qty', and 'price' keys."
+    },
+    {
+      "name": "calculate_totals",
+      "description": "Calculate subtotal, tax, discount, and grand total for a list of line items."
+    },
+    {
+      "name": "validate_invoice",
+      "description": "Validate an invoice dict for required fields, correct math, and common errors."
+    },
+    {
+      "name": "list_templates",
+      "description": "List all available invoice templates with their details."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Developer Tools",
+    "Finance & Fintech"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
