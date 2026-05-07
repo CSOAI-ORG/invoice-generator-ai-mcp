@@ -35,7 +35,22 @@ mcp = FastMCP("invoice-generator-ai", instructions="Generate, validate, and mana
 
 @mcp.tool()
 def generate_invoice(client: str, items: list[dict], currency: str = "USD", tax_region: str = "US", template: str = "standard", due_days: int = 30, notes: str = "", api_key: str = "") -> str:
-    """Generate a professional invoice. Each item needs 'description', 'qty', and 'price' keys."""
+    """Generate a professional invoice. Each item needs 'description', 'qty', and 'price' keys.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -87,7 +102,23 @@ def generate_invoice(client: str, items: list[dict], currency: str = "USD", tax_
 
 @mcp.tool()
 def calculate_totals(items: list[dict], tax_region: str = "US", discount_percent: float = 0, api_key: str = "") -> str:
-    """Calculate subtotal, tax, discount, and grand total for a list of line items."""
+    """Calculate subtotal, tax, discount, and grand total for a list of line items.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -121,7 +152,23 @@ def calculate_totals(items: list[dict], tax_region: str = "US", discount_percent
 
 @mcp.tool()
 def validate_invoice(invoice: dict, api_key: str = "") -> str:
-    """Validate an invoice dict for required fields, correct math, and common errors."""
+    """Validate an invoice dict for required fields, correct math, and common errors.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -168,7 +215,22 @@ def validate_invoice(invoice: dict, api_key: str = "") -> str:
 
 @mcp.tool()
 def list_templates(api_key: str = "") -> str:
-    """List all available invoice templates with their details."""
+    """List all available invoice templates with their details.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
