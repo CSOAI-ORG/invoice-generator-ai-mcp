@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "invoice-generator-ai-mcp"
-version = "1.0.3"
+version = "1.0.4"
 readme = "README.md"
 description = "Invoice Generator Ai tools for AI agents. Capabilities: generate invoice, calculate totals, validate invoice. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
