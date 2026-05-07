@@ -50,6 +50,17 @@ def generate_invoice(client: str, items: list[dict], currency: str = "USD", tax_
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        client (str): The client to analyze or process.
+        items (list[dict]): The items to analyze or process.
+        currency (str): The currency to analyze or process.
+        tax_region (str): The tax region to analyze or process.
+        template (str): The template to analyze or process.
+        due_days (int): The due days to analyze or process.
+        notes (str): The notes to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -132,6 +143,13 @@ def calculate_totals(items: list[dict], tax_region: str = "US", discount_percent
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        items (list[dict]): The items to analyze or process.
+        tax_region (str): The tax region to analyze or process.
+        discount_percent (float): The discount percent to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -196,6 +214,11 @@ def validate_invoice(invoice: dict, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        invoice (dict): The invoice to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -272,6 +295,10 @@ def list_templates(api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
