@@ -1,0 +1,33 @@
+# invoice-generator-ai-mcp
+# **MCP server for invoice generator ai mcp operations**
+
+## Install
+```bash
+pip install invoice-generator-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `generate_invoice`
+Generate a professional invoice. Each item needs 'description', 'qty', and 'price' keys.
+
+### `calculate_totals`
+Calculate subtotal, tax, discount, and grand total for a list of line items.
+
+### `validate_invoice`
+Validate an invoice dict for required fields, correct math, and common errors.
+
+### `list_templates`
+List all available invoice templates with their details.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

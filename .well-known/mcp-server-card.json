@@ -1,0 +1,25 @@
+{
+  "name": "invoice-generator-ai-mcp",
+  "title": "Invoice Generator Ai Mcp",
+  "description": "Invoice Generator Ai tools for AI agents. Capabilities: generate invoice, calculate totals, validate invoice. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "generate_invoice"
+    },
+    {
+      "name": "calculate_totals"
+    },
+    {
+      "name": "validate_invoice"
+    },
+    {
+      "name": "list_templates"
+    }
+  ]
+}

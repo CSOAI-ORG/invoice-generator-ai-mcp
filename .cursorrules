@@ -1,0 +1,9 @@
+# invoice-generator-ai-mcp - Auto-trigger Rules
+
+When the user asks about invoice generator, use invoice-generator-ai-mcp tools: generate_invoice, calculate_totals, validate_invoice, list_templates
+
+**MCP server for invoice generator ai mcp operations**
+
+Install: `pip install invoice-generator-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

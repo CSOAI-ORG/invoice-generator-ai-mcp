@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""MEOK AI Labs — invoice-generator-ai-mcp MCP Server. Generate professional invoices with line items and totals."""
+"""
+MEOK AI Labs — invoice-generator-ai-mcp MCP Server. Generate professional invoices with line items and totals."""
 
 import json
 import uuid
@@ -8,7 +9,6 @@ from collections import defaultdict
 
 from mcp.server.fastmcp import FastMCP
 import sys, os
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
 
 FREE_DAILY_LIMIT = 15
@@ -78,7 +78,7 @@ def generate_invoice(client: str, items: list[dict], currency: str = "USD", tax_
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     now = datetime.now(timezone.utc)
@@ -167,7 +167,7 @@ def calculate_totals(items: list[dict], tax_region: str = "US", discount_percent
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     tax_rate = TAX_RATES.get(tax_region.upper(), 0.0)
@@ -236,7 +236,7 @@ def validate_invoice(invoice: dict, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     errors = []
@@ -316,7 +316,7 @@ def list_templates(api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     templates = []
@@ -334,5 +334,8 @@ def list_templates(api_key: str = "") -> str:
     }, indent=2)
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
