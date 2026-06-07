@@ -1,0 +1,59 @@
+{
+  "name": "invoice-generator-ai-mcp",
+  "description": "Invoice Generator Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/invoice-generator-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "generate_invoice",
+      "name": "Generate Invoice",
+      "description": "generate_invoice via invoice-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "calculate_totals",
+      "name": "Calculate Totals",
+      "description": "calculate_totals via invoice-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "validate_invoice",
+      "name": "Validate Invoice",
+      "description": "validate_invoice via invoice-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "list_templates",
+      "name": "List Templates",
+      "description": "list_templates via invoice-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
